@@ -24,6 +24,8 @@ services:
   zammad-elasticsearch:
     image: bitnami/elasticsearch:8.5.1
     restart: ${RESTART}
+    environment:
+      - ELASTICSEARCH_HEAP_SIZE=512m
     volumes:
       - ./zammad/elasticsearch:/bitnami/elasticsearch/data
 
